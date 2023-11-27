@@ -12,13 +12,6 @@ public class ABCSteps {
         Hooks.abcMousePage.signUp();
     }
 
-    @Then("waits for url to be {string} and verifies it.")
-    public void waitsForUrlToBeAndVerifiesIt(String urlToWait) {
-        urlToWait = ConfigReader.replaceWithConfig(urlToWait);
-        WaitUtils.waitForPageUrl(Hooks.driver, urlToWait);
-        Assert.assertEquals(urlToWait, Hooks.driver.getCurrentUrl());
-    }
-
     @And("enters a {string} address then submits.")
     public void entersAAddressThenSubmits(String emailAddress) {
         emailAddress = ConfigReader.replaceWithConfig(emailAddress);

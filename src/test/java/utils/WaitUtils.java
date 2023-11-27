@@ -63,6 +63,17 @@ public class WaitUtils {
     }
 
     /**
+     * Waits for given element to have given text
+     *
+     * @param driver WebDriver instance
+     * @param e      element to wait for
+     * @param elementText      element text to wait for
+     */
+    public static void waitForElementToHaveText(WebDriver driver, WebElement e, String elementText) {
+        wait(driver).until(ExpectedConditions.textToBePresentInElement(e, elementText));
+    }
+
+    /**
      * Waits for the page to have a given title
      * <p>
      * This method is an attempt to address a problem where Chrome/IE drivers
@@ -80,7 +91,7 @@ public class WaitUtils {
      * Waits for the url to have given url
      *
      * @param driver WebDriver instance
-     * @param title  title the page should have
+     * @param urlToChange  url the page should have
      */
     public static boolean waitForPageUrl(WebDriver driver, String urlToChange) {
         return wait(driver).until(ExpectedConditions.urlContains(urlToChange));

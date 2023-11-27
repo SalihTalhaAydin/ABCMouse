@@ -27,4 +27,9 @@ public class UICommonUtils {
         }
     }
 
+
+
+    public static WebElement getElementByText(WebElement element, String text){
+        return element.findElement(By.xpath("//*[text()='"+ text + "']"));
+    }
 }
