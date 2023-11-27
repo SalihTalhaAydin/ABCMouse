@@ -25,6 +25,7 @@ public class ConfigReader {
 
     public static String replaceWithConfig(String str) {
         do{
+            if(!str.contains("{{")) break;
             String key = str.substring(
               str.indexOf("{{") + 2,
               str.indexOf("}}")

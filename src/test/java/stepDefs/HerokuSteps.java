@@ -1,6 +1,7 @@
 package stepDefs;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Then;
 import utils.ConfigReader;
 
 public class HerokuSteps {
@@ -24,5 +25,10 @@ public class HerokuSteps {
     @And("user verifies the {string} text content is visible.")
     public void userVerifiesTheTextContentIsVisible(String textContent) {
         Hooks.herokuAppLoginPage.validateTextContent(textContent);
+    }
+
+    @Then("user validates the error message as {string}.")
+    public void userValidatesTheErrorMessageAs(String errorMessage) {
+        Hooks.herokuAppLoginPage.validateErrorMessage(errorMessage);
     }
 }

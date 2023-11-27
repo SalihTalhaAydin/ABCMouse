@@ -1,4 +1,4 @@
-Feature: Heroku App
+Feature: ABC Mouse
 
   @HerokuApp
   Scenario: Happy login
